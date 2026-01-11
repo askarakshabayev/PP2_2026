@@ -2,115 +2,22 @@
 
 ## Course Overview: Programming Principles 2
 
-### Course Syllabus
+### Course Syllabus (https://docs.google.com/document/d/1U4zZv1ZJKPCb0F27gUTFfsKxnscaRrIhicOgWKmAl3I/edit?usp=sharing)
 
-#### **Week 1**
-**L1. Python Fundamentals**
-- Python Intro
-- Python User Input
-- Python Get Started
-- Python Syntax
-- Python Comments
-- Python Variables
-- Python Data Types
-- Python Numbers
-- Python Casting
-- Python Strings
-- Python String Formatting
-- Python Booleans
-- Python Operators
-- Python If...Else
-
-**L2. Python Fundamentals (Continued)**
-- Python While Loops
-- Python Lists
-- Python For Loops
-- Python Arrays
-- Python Tuples
-- Python Sets
-- Python Dictionaries
-
-#### **Week 2-3**
-**L3. Object-Oriented Programming**
-- Python Functions
-- Python Lambda
-- Python Classes and Objects
-- Python Inheritance
-- **TSIS 1 + TSIS 2 + TSIS 3 defense**
-
-**L4. Advanced Python Concepts**
-- Python Iterators, Generators
-- Python Scope
-- Python Modules
-- Python Dates
-- Python Math
-- Python JSON
-
-#### **Week 4-5**
-**L5. Regular Expressions**
-- Regex in Python
-- Using Regex to search and match string patterns in text
-- Metacharacters
-- Special Sequences
-- compile function
-
-**L6. File Operations & Built-in Functions**
-- Directories and files
-- Python File Handling
-- Python Read Files
-- Python Write/Create Files
-- Python Delete Files
-- Working with directories
-- Python builtin functions
-- **TSIS 4 + TSIS 5 + TSIS 6 defense**
-
-#### **Week 6-8**
-**L7. Pygame Basics**
-- Getting Started
-- Working with Images
-- Music and Sound Effects
-- Geometric Drawing
-- Timer
-
-**L8. Pygame Advanced**
-- Fonts and Text
-- More on Input
-- Centralized Scene Logic
-- Game Creation
-
-**L9. Pygame Projects**
-- Snake Game
-- Paint Application
-- **TSIS 7 + TSIS 8 + TSIS 9 defense**
-
-#### **Week 10-11**
-**L10. Databases**
-- Saving data to database
-- Reading from the database
-- Updating and deleting data in the database
-
-**L11. Databases (Advanced)**
-- Additional topics
-- **TSIS 10 + TSIS 11 defense**
-
----
-
-## Assessment & Grading
+### Assessment & Grading (https://docs.google.com/spreadsheets/d/1VMWG-9Vj9HrT_BMkLcZ_nxMuc8lb_KPXnrmGkpB7JQ4/edit?usp=sharing)
 
 ### Attendance
 - Standard KBTU attendance rules apply
-- Regular attendance is mandatory
 
-### Laboratory Works (TSISs)
+### Laboratory Works (TODO: Link to laboratory work)
 - Weekly assignments must be completed
 - All code must be uploaded to GitHub before the deadline
-- Late submissions may result in grade penalties
 
 ### Quizzes
 - **Quiz 1**: Week 4 (February 15) - Contest on ejudge
 - **Quiz 2**: Week 8 (March 15) - Contest on ejudge
 - **Quiz 3**: Week 12 - Regular quiz
-- **Note**: On quiz weeks, there will be no regular lectures
+- **Note**: On contest weeks, there will be no regular lectures
 
 ### Final Project
 - **Week 15**: Project defense
@@ -137,34 +44,14 @@
 Welcome to Programming Principles 2! This course builds upon the fundamentals you learned in PP1 and dives deeper into Python programming. By the end of this course, you will:
 
 - Master Python programming fundamentals
-- Understand object-oriented programming concepts
+- Understand object-oriented programming concepts (basic)
 - Work with files, databases, and external libraries
 - Create interactive games using Pygame
 - Collaborate effectively using Git and GitHub
 
-### 2. Grading System & Defense Format
-
-#### Grading Breakdown
-- **Laboratory Works (TSISs)**: Major portion of your grade
-- **Quizzes**: Three quizzes throughout the semester
-- **Attendance**: Regular attendance is required
-- **Final Project**: Comprehensive project demonstrating course concepts
-
-#### Defense Format
-- Laboratory works will be defended in groups (TSIS 1-3, TSIS 4-6, etc.)
-- You must explain your code and answer questions
-- Be prepared to modify your code during defense
-
-#### Assessment Criteria
-- **Code Quality**: Clean, readable, and well-structured code
-- **Functionality**: Code works as expected without errors
-- **Understanding**: Ability to explain your implementation
-- **GitHub Usage**: Proper version control and commit history
-- **Timeliness**: Meeting deadlines
-
 ---
 
-### 3. Essential Tools
+### 2. Essential Tools
 
 We'll be using four primary tools in this course:
 
@@ -219,25 +106,9 @@ brew install python3
 sudo apt update
 sudo apt install python3 python3-pip
 ```
-
-**Fedora:**
-```bash
-sudo dnf install python3 python3-pip
-```
-
-**Arch Linux:**
-```bash
-sudo pacman -S python python-pip
-```
-
-Verify installation:
-```bash
-python3 --version
-```
-
 ---
 
-### 5. Installing VSCode
+### 4. Installing VSCode
 
 VSCode is a powerful, free code editor that we'll use for writing Python code.
 
@@ -248,52 +119,9 @@ VSCode is a powerful, free code editor that we'll use for writing Python code.
 3. Install the application
 4. Launch VSCode
 
-#### **Recommended Extensions**
-
-Install these extensions in VSCode:
-1. **Python** (by Microsoft)
-2. **Pylance** (by Microsoft)
-3. **Python Indent**
-4. **GitLens** (optional but helpful)
-
-To install extensions:
-- Click the Extensions icon in the left sidebar (or press `Ctrl+Shift+X`)
-- Search for the extension name
-- Click "Install"
-
 ---
 
-### 6. Understanding Files and File Systems
-
-Before we dive into Git, it's important to understand how files work on your computer.
-
-#### **What is a File?**
-- A file is a container for storing data on your computer
-- Files have names and extensions (e.g., `script.py`, `document.txt`)
-- The extension tells the computer what type of data the file contains
-
-#### **What is a Directory (Folder)?**
-- A directory is a container that holds files and other directories
-- Directories help organize files hierarchically
-
-#### **File Paths**
-
-**Absolute Path**: The complete path from the root directory
-- Windows: `C:\Users\YourName\Documents\code.py`
-- macOS/Linux: `/Users/YourName/Documents/code.py`
-
-**Relative Path**: Path relative to your current location
-- `./code.py` - File in current directory
-- `../other.py` - File in parent directory
-
-#### **Current Working Directory**
-- This is the directory where your terminal/command prompt is currently "located"
-- You can see it in your terminal prompt
-- Use `pwd` (macOS/Linux) or `cd` (Windows) to see current directory
-
----
-
-### 7. What is Git?
+### 5. What is Git?
 
 **Git** is a version control system that helps you:
 - Track changes in your code over time
@@ -315,7 +143,7 @@ Git solves all these problems!
 
 ---
 
-### 8. Installing Git
+### 6. Installing Git
 
 #### **Windows**
 
@@ -355,16 +183,6 @@ sudo apt update
 sudo apt install git
 ```
 
-**Fedora:**
-```bash
-sudo dnf install git
-```
-
-**Arch Linux:**
-```bash
-sudo pacman -S git
-```
-
 Verify installation:
 ```bash
 git --version
@@ -372,9 +190,9 @@ git --version
 
 ---
 
-### 9. Working with Git
+### 7. Working with Git
 
-Now let's learn the basics of Git! We'll follow the first 10 exercises from [Git How To](https://githowto.com/).
+Now let's learn the basics of Git! We'll follow the first 13 exercises from [Git How To](https://githowto.com/).
 
 #### **Exercise 1-2: Setup**
 

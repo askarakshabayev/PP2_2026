@@ -2,9 +2,7 @@
 
 ## Course Overview: Programming Principles 2
 
-### Course Syllabus (https://docs.google.com/document/d/1U4zZv1ZJKPCb0F27gUTFfsKxnscaRrIhicOgWKmAl3I/edit?usp=sharing)
-
-### Assessment & Grading (https://docs.google.com/spreadsheets/d/1VMWG-9Vj9HrT_BMkLcZ_nxMuc8lb_KPXnrmGkpB7JQ4/edit?usp=sharing)
+### Course Syllabus (https://docs.google.com/document/d/1cMMQxDmXUp_Vz5hBvPIyaz8gneluNDofKBJlsIFEOWw/edit?tab=t.0)
 
 ### Attendance
 - Standard KBTU attendance rules apply
@@ -350,17 +348,6 @@ Think of it this way:
 
 You've already configured your name and email. Now let's set up authentication.
 
-**Using Personal Access Token (Recommended)**
-
-1. Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
-2. Click "Generate new token (classic)"
-3. Give it a name (e.g., "My Laptop")
-4. Select scopes: `repo`, `workflow`
-5. Click "Generate token"
-6. **IMPORTANT**: Copy the token immediately (you won't see it again!)
-
-When pushing to GitHub, use the token as your password.
-
 **Using SSH (Alternative)**
 
 ```bash
@@ -522,105 +509,206 @@ else:
     print("You are a minor")
 ```
 
-**Loops:**
-```python
-# For loop
-for i in range(5):
-    print(f"Number: {i}")
+---
 
-# While loop
-count = 0
-while count < 5:
-    print(f"Count: {count}")
-    count += 1
+## Examples
+
+### Example 1:
+```python
+a = 5
+b = 10
+s = "sss"
+d = 1.2
+print('hello world')
+print("hello world")
+print(10 + 5)
+print(a + b)
 ```
 
-#### **Where to Learn More**
+### Example 2:
+```python
+a = 5
+b = 6
 
-For detailed Python tutorials, visit:
-- **W3Schools**: https://www.w3schools.com/python/
+if a > b:
+    print("YES")
+    print("abc")
+    print("hello")
+else:
+    print("NO")
+    print('kkk')
+    print("ppp")
+    if a * b > 10:
+        print("qqq")
+```
 
-Work through the following sections on W3Schools:
-1. Python Intro
-2. Python Get Started
-3. Python Syntax
-4. Python Variables
-5. Python Data Types
-6. Python Operators
-7. Python If...Else
+### Example 3:
+```python
+"""
+comment 1
+comment 2
+comment 3
+comment 4
+comment 5
+"""
 
----
+'''
+hello world 1
+hello world 2
+'''
 
-### 14. Working with Teaching Assistants
+# Comment
+a = 5
+b = 10
+print("hello world")  # Comment here
+```
 
-#### **How to Get Help**
+### Example 4:
+```python
+x1 = 5555555555555555555555555555555555555555
+x2 = 5555555555555555555555555555555555555555
+y = "string example"
+z = 'string "ppp" example 2'
+f = 5.2
+ok = True
+ok1 = False
+a = 5
+A = 10
 
-1. **Office Hours**: TAs will have scheduled office hours
-2. **Online Communication**: Use designated communication channels (e.g., Discord, Telegram)
-3. **Email**: For administrative questions
+print(type(x1))
+print(type(y))
+print(type(ok))
 
-#### **When to Ask for Help**
+a_ABc_2_ppp = 10
 
-✅ **DO ask when:**
-- You've tried to solve the problem for 15-20 minutes
-- You've searched online but don't understand the solutions
-- You need clarification on assignment requirements
-- You're getting an error you can't debug
+# xp-p = 10
+# 2xp = 15
+```
 
-❌ **DON'T ask for:**
-- Complete solutions to assignments
-- Someone to write your code for you
+### Example 5:
+```python
+# x, y, z = 5, 6, 7
+# x = y = z = 5
+# print(x + y + z)
 
-#### **How to Ask Good Questions**
+l = [5, 6, 7]
+x, y, z = l
+print(x)
+print(y)
+print(z)
+```
 
-**Bad question:**
-> "My code doesn't work. Help!"
+### Example 6:
+```python
+s1 = "hello"
+# print(s1 + "world")
 
-**Good question:**
-> "I'm trying to read a file in Python, but I'm getting a FileNotFoundError. Here's my code:
-> ```python
-> with open('data.txt', 'r') as file:
->     content = file.read()
-> ```
-> I verified that data.txt is in the same folder. What am I doing wrong?"
+a = 5  # integer
+b = str(5)  # string
+c = int("123")
+#  float(x), bool(x)
+print(s1 + b)
 
-Include:
-1. What you're trying to do
-2. What you expected to happen
-3. What actually happened
-4. What you've already tried
+a = "hello"
+```
 
----
+### Example 7:
+```python
+def func():
+    global a
+    a = "abc"
+    print("hi" + a)
 
-## Next Steps
 
-Before the next lecture:
+func()
+print(a)
+```
 
-1. ✅ Install Python, VSCode, and Git
-2. ✅ Create a GitHub account
-3. ✅ Complete the first 10 exercises on [Git How To](https://githowto.com/)
-4. ✅ Work through Python basics on [W3Schools](https://www.w3schools.com/python/)
-5. ✅ Create a test repository and practice: stage, commit, push
+### Example 8:
+```python
+import random
 
----
+print(random.randint(1, 100))
+```
 
-## Summary
+### Example 10:
+```python
+s1 = """text1 text2 text3
+text1 text2 text3
+text1 text2 text3
+text1 text2 text3
+text1 text2 text3"""
 
-Today we covered:
-- Course syllabus and grading system
-- Essential tools: Python, VSCode, Git, GitHub
-- Installing Python on different operating systems
-- Understanding files and file systems
-- What Git is and why we use it
-- Basic Git commands and workflow
-- How GitHub relates to Git
-- Python introduction and basics
-- How to work effectively with TAs
+print(s1)
+```
 
-**Remember**: The best way to learn programming is by doing. Practice Git commands, write Python code, and don't be afraid to make mistakes!
+### Example 11:
+```python
+# Example 1
+# a = "hello world"
+# print(len(a))
 
----
 
-**Questions?** Ask your TAs or instructor during office hours.
+# txt = "hello world, how are you?"
+#
+# ok = "are" not in txt
+#
+# if "are" not in txt:
+#     print("error")
 
-**Next Lecture**: Python Fundamentals - Data Types, Operators, and Control Flow
+s = "abcdeaghijKlmnopQrstuvwxaz"
+#
+# s1 = s[2:10]
+# print(s[2:5])
+# print(s[:5])
+# print(s[5:])
+
+# print(s[-5:-2])
+
+# print(s.upper())
+# print(s.upper()[2:5])
+
+print(s.replace('abc', 'BBB'))
+```
+
+### Example 12:
+```python
+# a = "abc,def,qwe"
+#
+# print(a.split(','))
+
+# a = "abc, def, klm"
+# print(a.split(', '))
+
+# a = "abc:def:klm"
+# print(a.split(':'))
+#
+# b = a.split(":")
+#
+# print(b[1])
+
+txt = """line1 text
+line2 text1 text2 text3
+line3 text"""
+
+a = txt.split('\n')
+
+print(a[1].split(' '))
+```
+
+### Example 13:
+```python
+txt = """
+hello, {1}
+how are you {0}
+"""
+
+print(txt.format("my friend", "test"))
+```
+
+### Example 14:
+```python
+s = "abcdef"
+
+print(s.endswith("def"))
+```

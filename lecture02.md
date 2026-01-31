@@ -953,21 +953,3 @@ for i in range(n):
 
 ---
 
-## Practice Problems
-
-1. Create a program that counts word frequency in a sentence using a dictionary
-2. Write a function to remove duplicates from a list using sets
-3. Implement a program that reads a 2D matrix and prints its transpose
-4. Create a program that finds common elements between multiple lists
-5. Write a function that reverses a list without using `.reverse()`
-
----
-
-## Next Lecture Preview
-
-In the next lecture, we'll cover:
-- Functions and parameters
-- Lambda functions
-- File I/O operations
-- Error handling and exceptions
-- Modules and packages

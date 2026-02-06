@@ -10,7 +10,17 @@
 
 ## Functions
 
+A **function** is a reusable block of code that performs a specific task. Functions help organize code, make it more readable, and follow the DRY (Don't Repeat Yourself) principle.
+
+### Why Use Functions?
+- **Reusability**: Write once, use many times
+- **Modularity**: Break complex problems into smaller, manageable pieces
+- **Readability**: Give meaningful names to blocks of code
+- **Maintainability**: Fix bugs or make changes in one place
+
 ### Basic Function
+
+Functions are defined using the `def` keyword, followed by the function name and parentheses.
 
 ```python
 def func():
@@ -20,6 +30,12 @@ func()
 ```
 
 ### Functions with Arguments
+
+**Parameters** are variables listed in the function definition. **Arguments** are actual values passed to the function when calling it.
+
+Python supports different ways to pass arguments:
+- **Positional arguments**: Values are assigned based on their position
+- **Keyword arguments**: Values are assigned by parameter name
 
 ```python
 def func(arg1, arg2):
@@ -31,6 +47,8 @@ func([1, 2, 3], [4, 5, 6])
 ```
 
 ### Modifying Mutable Arguments
+
+In Python, arguments are passed by **object reference**. For mutable objects (lists, dictionaries), changes inside the function affect the original object.
 
 ```python
 def func(my_list):
@@ -47,6 +65,8 @@ print(l)  # List is modified!
 
 ### *args (Variable Positional Arguments)
 
+The `*args` syntax allows a function to accept any number of positional arguments. Inside the function, `args` is a tuple containing all passed values.
+
 ```python
 def func(a, *args):
     for arg in args:
@@ -57,6 +77,8 @@ func(1, 2, 3, 4, 5)
 ```
 
 ### Using *args for Sum
+
+A practical example of `*args` - creating a flexible sum function:
 
 ```python
 def my_sum(*args):
@@ -73,6 +95,8 @@ print(sum2)  # 6
 
 ### Return Values
 
+The `return` statement sends a value back to the caller. Functions without `return` (or with just `return`) return `None`.
+
 ```python
 def func1(num1, num2):
     print(num1 + num2)
@@ -86,6 +110,10 @@ print(func2(3, 5))  # 8
 
 ### Default Parameter Values
 
+Default values make parameters optional. If no argument is provided, the default value is used.
+
+**Important**: Default parameters must come after non-default parameters.
+
 ```python
 def func(num1 = 0, num2 = 0):
     print(num1 + num2)
@@ -97,6 +125,8 @@ func(3, 5)   # 8
 
 ### **kwargs (Variable Keyword Arguments)
 
+The `**kwargs` syntax allows a function to accept any number of keyword arguments. Inside the function, `kwargs` is a dictionary.
+
 ```python
 def func(**kwargs):
     print(kwargs)  # kwargs is a dict
@@ -106,7 +136,15 @@ def func(**kwargs):
 func(fname = "Askar", lname = "Akshabayev")
 ```
 
+### Variable Scope
+
+**Scope** determines where a variable can be accessed. Python has two main scopes:
+- **Global scope**: Variables defined outside functions, accessible everywhere
+- **Local scope**: Variables defined inside functions, accessible only within that function
+
 ### Global Variables
+
+Variables defined outside functions are global and can be read inside functions:
 
 ```python
 x = 1  # global variable
@@ -119,17 +157,22 @@ func()
 
 ### Local Variables
 
+Variables defined inside a function are local and shadow global variables with the same name:
+
 ```python
 x = 1  # global variable
 
 def func():
-    x = 2  # local variable
+    x = 2  # local variable (different from global x)
     print(x)
 
 func()  # prints 2
+print(x)  # prints 1 (global x unchanged)
 ```
 
 ### Using `global` Keyword
+
+To modify a global variable inside a function, use the `global` keyword:
 
 ```python
 x = 1  # global variable
@@ -143,7 +186,11 @@ func()
 print(x)  # x is now 2
 ```
 
+**Note**: Overusing `global` is considered bad practice. Prefer passing values as arguments and returning results.
+
 ### Finding Maximum Value
+
+Functions can contain conditional logic to make decisions:
 
 ```python
 def f(a, b, c):
@@ -159,6 +206,8 @@ print(maxi)  # 8
 
 ### Returning Multiple Values
 
+Python functions can return multiple values as a tuple. You can unpack them into separate variables:
+
 ```python
 def f(a, b):
     result1 = a * b
@@ -173,7 +222,13 @@ a, _, c = f(2, 3)  # need first and third
 print(a, c)
 ```
 
+The underscore `_` is a convention for variables you don't need.
+
 ### Recursion with Memoization
+
+**Recursion** is when a function calls itself. **Memoization** is an optimization technique that stores results of expensive function calls.
+
+This example calculates Fibonacci numbers efficiently:
 
 ```python
 result = dict()
@@ -190,11 +245,23 @@ def rec(n):
 print(rec(5))
 ```
 
+Without memoization, recursive Fibonacci has exponential time complexity O(2^n). With memoization, it becomes linear O(n).
+
 ---
 
 ## Lambda Functions
 
-Lambda functions are a quicker way to write functions on the fly using the `lambda` keyword.
+**Lambda functions** (also called anonymous functions) are small, single-expression functions defined using the `lambda` keyword.
+
+### Syntax
+```
+lambda arguments: expression
+```
+
+### When to Use Lambda Functions?
+- Short, simple operations that don't need a full function definition
+- As arguments to higher-order functions like `map()`, `filter()`, `sorted()`
+- When a function is used only once
 
 ### Basic Lambda
 
@@ -203,9 +270,17 @@ my_power = lambda x, y: x ** y
 print(my_power(2, 3))  # 8
 ```
 
+This is equivalent to:
+```python
+def my_power(x, y):
+    return x ** y
+```
+
 ### map() with Lambda
 
-The `map` function takes a function and a sequence, applying the function over all elements.
+The `map()` function applies a function to every item in an iterable (list, tuple, etc.) and returns a map object.
+
+**Syntax**: `map(function, iterable)`
 
 ```python
 nums = [48, 6, 9, 21, 1]
@@ -213,7 +288,9 @@ square_all = map(lambda num: num ** 2, nums)
 print(list(square_all))  # [2304, 36, 81, 441, 1]
 ```
 
-### Function Returning Lambda
+### Function Returning Lambda (Closures)
+
+Functions can return lambda functions. This creates a **closure** - a function that remembers values from its enclosing scope.
 
 ```python
 def func(n):
@@ -233,6 +310,10 @@ print(multiple_100(6))    # 600
 ```
 
 ### filter() with Lambda
+
+The `filter()` function creates an iterator of elements for which a function returns `True`.
+
+**Syntax**: `filter(function, iterable)`
 
 Filter even numbers from a list:
 
@@ -262,11 +343,32 @@ print(list2)  # [2, 5, 13, 103]
 
 ## OOP (Object-Oriented Programming)
 
+**Object-Oriented Programming (OOP)** is a programming paradigm based on the concept of "objects" that contain data (attributes) and code (methods).
+
+### Core OOP Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Class** | A blueprint/template for creating objects |
+| **Object** | An instance of a class |
+| **Attribute** | Data stored inside an object (variables) |
+| **Method** | Functions that belong to an object |
+| **Inheritance** | Mechanism to create a new class from an existing class |
+| **Encapsulation** | Bundling data and methods that operate on that data |
+
+### Why Use OOP?
+- **Organization**: Group related data and functions together
+- **Reusability**: Inherit and extend existing classes
+- **Modularity**: Each object is independent and can be modified without affecting others
+- **Real-world modeling**: Objects can represent real-world entities
+
 ### Basic Class
+
+Classes are defined using the `class` keyword. By convention, class names use CamelCase.
 
 ```python
 class MyClass:
-    # fields
+    # fields (class attributes)
     x = 5
     y = 6
 
@@ -288,7 +390,22 @@ print(a.sum(1, 2))   # 33 (10 + 20 + 1 + 2)
 print(b.sum(3, 4))   # 44 (7 + 30 + 3 + 4)
 ```
 
+### The `self` Parameter
+
+`self` refers to the current instance of the class. It must be the first parameter of every method (though you don't pass it when calling).
+
+### The `__init__` Method (Constructor)
+
+The `__init__` method is called automatically when creating a new object. It's used to initialize object attributes.
+
 ### Inheritance
+
+**Inheritance** allows a class (child/subclass) to inherit attributes and methods from another class (parent/superclass).
+
+Benefits of inheritance:
+- **Code reuse**: Don't repeat code that's already in the parent class
+- **Extensibility**: Add new features to child classes
+- **Polymorphism**: Child classes can override parent methods
 
 ```python
 class Person:
@@ -323,3 +440,38 @@ b.show()
 # Bbb - Ccc
 # 4.0 - FOGI
 ```
+
+### The `super()` Function
+
+`super()` returns a proxy object that allows you to call methods from the parent class. This is essential for:
+- Calling the parent's `__init__` to initialize inherited attributes
+- Extending (not replacing) parent methods
+
+---
+
+## Conclusion
+
+### Key Takeaways
+
+**Functions**:
+- Functions are reusable blocks of code defined with `def`
+- Parameters can have default values, making them optional
+- `*args` collects extra positional arguments into a tuple
+- `**kwargs` collects extra keyword arguments into a dictionary
+- Functions can return multiple values using tuples
+- Use `global` keyword carefully to modify global variables inside functions
+- Recursion with memoization can dramatically improve performance
+
+**Lambda Functions**:
+- Lambda functions are concise, single-expression functions
+- Syntax: `lambda arguments: expression`
+- Commonly used with `map()`, `filter()`, and `sorted()`
+- Best for simple operations; use regular functions for complex logic
+
+**OOP**:
+- Classes are blueprints for creating objects
+- Objects have attributes (data) and methods (behavior)
+- `__init__` is the constructor method, called when creating objects
+- `self` refers to the current instance
+- Inheritance allows classes to inherit from other classes
+- `super()` is used to call parent class methods

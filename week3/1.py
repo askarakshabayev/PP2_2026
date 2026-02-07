@@ -4,7 +4,6 @@ a.add(2)
 a.add(1)
 a.add(2)
 a.add(3)
-a.remove(10)
-# a.discard(10)
 
-print(a)
+for x in a:
+    print(x)

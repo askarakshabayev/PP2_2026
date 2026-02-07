@@ -266,14 +266,14 @@ lambda arguments: expression
 ### Basic Lambda
 
 ```python
-my_power = lambda x, y: x ** y
-print(my_power(2, 3))  # 8
+def my_power(x, y):
+    return x ** y
 ```
 
 This is equivalent to:
 ```python
-def my_power(x, y):
-    return x ** y
+my_power = lambda x, y: x ** y
+print(my_power(2, 3))  # 8
 ```
 
 ### map() with Lambda

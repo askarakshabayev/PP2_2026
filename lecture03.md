@@ -281,6 +281,7 @@ print(my_power(2, 3))  # 8
 The `map()` function applies a function to every item in an iterable (list, tuple, etc.) and returns a map object.
 
 **Syntax**: `map(function, iterable)`
+
 ```python
 nums = [48, 6, 9, 21, 1]
 square_all = map(lambda num: num ** 2, nums)

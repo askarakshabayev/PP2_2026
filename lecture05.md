@@ -828,8 +828,6 @@ import math
 
 print(math.pi)    # 3.141592653589793
 print(math.e)     # 2.718281828459045
-print(math.inf)   # inf
-print(math.nan)   # nan
 ```
 
 ### Common Functions
@@ -837,11 +835,13 @@ print(math.nan)   # nan
 ```python
 import math
 
+print(min(1, 2, 3, 4))
+
 # Rounding
 print(math.floor(4.7))    # 4 (round down)
 print(math.ceil(4.2))     # 5 (round up)
 print(math.trunc(4.9))    # 4 (remove decimal part)
-
+print(round(2.5))
 # Power and logarithms
 print(math.pow(2, 10))    # 1024.0
 print(math.sqrt(144))     # 12.0

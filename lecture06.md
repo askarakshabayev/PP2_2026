@@ -56,9 +56,9 @@ The `re` module provides several key functions:
 
 | Function | Description |
 |----------|-------------|
+| `re.search()` | Searches for the **first occurrence** anywhere in the string |
 | `re.match()` | Matches pattern **at the beginning** of the string |
 | `re.fullmatch()` | Checks if the **entire** string matches the pattern |
-| `re.search()` | Searches for the **first occurrence** anywhere in the string |
 | `re.findall()` | Returns a **list** of all matches |
 | `re.finditer()` | Returns an **iterator** of match objects (with positions) |
 | `re.split()` | Splits string by pattern (like `str.split()` but with regex) |
@@ -147,8 +147,8 @@ print(re.split(r'\s+', txt))
 # ['The', 'rain', 'in', 'Spain']
 
 # Split by non-word characters (punctuation, spaces, etc.)
-print(re.split(r'\W+', 'Где, скажите мне, мои очки??!'))
-# ['Где', 'скажите', 'мне', 'мои', 'очки', '']
+print(re.split(r'\W+', 'Where, please tell me, my glasses??!'))
+# ['Where', 'please', 'tell', 'me', 'my', 'glasses', '']
 ```
 
 ### `re.sub()` — replace matches
@@ -180,6 +180,7 @@ text = "Phone: +7-777-123-45-67, backup: +7-701-987-65-43"
 phones = re.findall(r"\+7-\d{3}-\d{3}-\d{2}-\d{2}", text)
 print(phones)
 # ['+7-777-123-45-67', '+7-701-987-65-43']
+# r"(\+7|8)-?(\d{3})-?(\d{3})-?(\d{2})-?(\d{2})"
 ```
 
 ---
@@ -193,7 +194,7 @@ print(phones)
 | `.` | Any character except newline | `a.c` | `abc`, `a1c`, `a c` |
 | `^` | Start of string | `^Hello` | `Hello world` |
 | `$` | End of string | `world$` | `Hello world` |
-| `\|` | OR | `cat\|dog` | `cat` or `dog` |
+| `|` | OR | `cat|dog` | `cat` or `dog` |
 | `()` | Group | `(ab)+` | `ab`, `abab` |
 | `\` | Escape special character | `\.` | literal `.` |
 
@@ -538,6 +539,7 @@ for name in ["Alice", "Bob", "charlie", "DAVE"]:
 # DAVE is invalid
 ```
 
+SELF STUDY
 ### Flags
 
 Flags modify how the pattern is applied.

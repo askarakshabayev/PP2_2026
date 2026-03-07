@@ -3,7 +3,7 @@
 ## Plan
 - Built-in Python functions overview (`map`, `filter`, `enumerate`, `zip`, `sorted`, `any`, `all`, etc.)
 - File handling: reading (`r`), writing (`w`), appending (`a`)
-- Working with directories (`os`, `pathlib`)
+- Working with directories (`os`)
 - Creating and deleting files and directories
 
 ---
@@ -519,43 +519,6 @@ with os.scandir('.') as entries:
         if entry.is_file() and entry.name.endswith('.py'):
             shutil.copy(entry.path, os.path.join('py_backup', entry.name))
             print(f'Copied: {entry.name}')
-```
-
----
-
-## 5. `pathlib` — modern path handling
-
-`pathlib.Path` is an object-oriented alternative to `os.path`. Available since Python 3.4.
-
-```python
-from pathlib import Path
-
-p = Path('.')                  # current directory
-p = Path('/Users/askar/files') # absolute path
-
-# Building paths
-sub = p / 'week7' / 'input.txt'
-print(sub)                     # /Users/askar/files/week7/input.txt
-
-# Info
-print(sub.name)       # input.txt
-print(sub.stem)       # input
-print(sub.suffix)     # .txt
-print(sub.parent)     # /Users/askar/files/week7
-print(sub.exists())   # True/False
-
-# Listing files
-for f in Path('.').iterdir():
-    if f.is_file():
-        print(f.name)
-
-# Find all .py files recursively
-for py in Path('.').rglob('*.py'):
-    print(py)
-
-# Read / write (no open() needed)
-text = Path('input.txt').read_text()
-Path('output.txt').write_text('hello world')
 ```
 
 ---

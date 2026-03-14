@@ -141,6 +141,7 @@ print(isinstance(42, int))    # True
 
 Given a list of student names and their grades, use `zip`, `filter`, and `map` to print only the names of students who passed (grade >= 60), converted to uppercase.
 
+
 **Solution:**
 
 ```python

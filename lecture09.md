@@ -23,6 +23,8 @@ Start PostgreSQL and create a database:
 ```sql
 CREATE DATABASE pp2_db;
 ```
+# user = pp2
+# password = pp2_password
 
 ---
 
@@ -37,9 +39,9 @@ import psycopg2
 conn = psycopg2.connect(
     host="localhost",
     port=5432,
-    dbname="pp2_db",
-    user="postgres",
-    password="secret"
+    dbname="pp3",
+    user="pp2_test",
+    password="pp2_test"
 )
 
 cur = conn.cursor()
@@ -76,7 +78,7 @@ conn.close()
 import psycopg2
 
 # DSN string — alternative to keyword arguments
-conn = psycopg2.connect("host=localhost dbname=pp2_db user=postgres password=secret")
+conn = psycopg2.connect("host=localhost dbname=pp2 user=pp2 password=pp2_password")
 ```
 
 ---
@@ -430,26 +432,6 @@ else:
     print("Not found.")
 ```
 
-### Using column names with `RealDictCursor`
-
-```python
-import psycopg2
-import psycopg2.extras
-
-conn = psycopg2.connect(
-    host="localhost", dbname="pp2_db",
-    user="postgres", password="secret"
-)
-cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
-
-cur.execute("SELECT * FROM students;")
-for row in cur.fetchall():
-    print(row["name"], row["grade"])    # access by column name
-
-cur.close()
-conn.close()
-```
-
 ### Filtering, ordering, limiting
 
 ```python
@@ -644,7 +626,6 @@ conn.close()
 **Connecting:**
 - `psycopg2.connect(host, dbname, user, password)` — opens a session
 - Always call `conn.commit()` to persist changes (INSERT / UPDATE / DELETE)
-- Use `with conn:` for automatic commit/rollback
 - `cur.close()` and `conn.close()` to release resources
 
 **Creating Tables:**
@@ -665,7 +646,6 @@ conn.close()
 **Querying Data:**
 - `cur.fetchone()` — single row as a tuple (or `None`)
 - `cur.fetchall()` — all rows as a list of tuples
-- `RealDictCursor` — access columns by name instead of index
 - Filtering: `WHERE`, sorting: `ORDER BY`, pagination: `LIMIT / OFFSET`
 - Aggregates: `COUNT`, `AVG`, `MAX`, `MIN`, `SUM`
 

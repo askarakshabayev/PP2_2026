@@ -12,3 +12,4 @@ Programming Principles 2 - Spring 2026
 - [Lecture 7: Built-ins & Work with Files](lecture07.md)
 - [Lecture 9: Databases I (PostgreSQL)](lecture09.md)
 - [Lecture 10: Databases II (PostgreSQL Advanced)](lecture10.md)
+- [Lecture 11: Pygame I](lecture11.md)

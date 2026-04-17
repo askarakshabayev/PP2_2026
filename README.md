@@ -13,3 +13,4 @@ Programming Principles 2 - Spring 2026
 - [Lecture 9: Databases I (PostgreSQL)](lecture09.md)
 - [Lecture 10: Databases II (PostgreSQL Advanced)](lecture10.md)
 - [Lecture 11: Pygame I](lecture11.md)
+- [Lecture 12: Pygame II](lecture12.md)

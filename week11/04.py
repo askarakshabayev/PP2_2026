@@ -68,7 +68,7 @@ while running:
 
     # spritecollide returns a list of blocks the player overlaps.
     # dokill=False → blocks are NOT removed from group automatically.
-    hit_list = pygame.sprite.spritecollide(player, block_group, False)
+    hit_list = pygame.sprite.spritecollide(player, block_group, True)
     for block in hit_list:
         block.reset_position()
         score += 1

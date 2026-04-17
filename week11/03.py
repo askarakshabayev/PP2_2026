@@ -57,7 +57,9 @@ class Enemy(pygame.sprite.Sprite):
 player = Player()
 enemy = Enemy()
 
-all_sprites = pygame.sprite.Group(player, enemy)
+all_sprites = pygame.sprite.Group()
+all_sprites.add(player)
+all_sprites.add(enemy)
 
 running = True
 while running:

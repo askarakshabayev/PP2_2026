@@ -721,7 +721,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("05 - USEREVENT + kill()")
 clock = pygame.time.Clock()
 
-SPAWN_CAR = pygame.USEREVENT + 1
+SPAWN_CAR = pygame.USEREVENT + 1 # 25 
 pygame.time.set_timer(SPAWN_CAR, 1500)   # fire every 1.5 s
 ```
 
